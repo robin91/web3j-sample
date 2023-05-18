@@ -29,6 +29,7 @@ public class TransactionClient {
 		web3j = Web3j.build(new HttpService(Environment.RPC_URL));
 		admin = Admin.build(new HttpService(Environment.RPC_URL));
 
+
 		getBalance(fromAddress);
 		sendTransaction();
 	}

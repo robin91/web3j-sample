@@ -40,24 +40,25 @@ public class TokenClient {
 
 	private static Admin admin;
 
-	private static String fromAddress = "0x7b1cc408fcb2de1d510c1bf46a329e9027db4112";
+	private static String fromAddress = "0x287C7f9Ea470b228f1A006a8E4b056D775d1b5ab";
 
-	private static String contractAddress = "0x4c1ae77bc2df45fb68b13fa1b4f000305209b0cb";
+	private static String contractAddress = "0x8952487fd1dbfca106301bb60ef81e08f2b7f2a2";
 
 	private static String emptyAddress = "0x0000000000000000000000000000000000000000";
 
 	public static void main(String[] args) {
 		web3j = Web3j.build(new HttpService(Environment.RPC_URL));
 		admin = Admin.build(new HttpService(Environment.RPC_URL));
-		getTokenBalance(web3j, fromAddress, contractAddress);
-		System.out.println(getTokenName(web3j, contractAddress));
-		System.out.println(getTokenDecimals(web3j, contractAddress));
-		System.out.println(getTokenSymbol(web3j, contractAddress));
-		System.out.println(getTokenTotalSupply(web3j, contractAddress));
-		System.out.println(sendTokenTransaction(
-				fromAddress, "yzw",
-				"0x6c0f49aF552F2326DD851b68832730CB7b6C0DaF", contractAddress,
-				BigInteger.valueOf(100000)));
+		BigInteger tokenBalance = getTokenBalance(web3j, fromAddress, contractAddress);
+		System.out.println("tokenBalance: " + tokenBalance);
+//		System.out.println(getTokenName(web3j, contractAddress));
+//		System.out.println(getTokenDecimals(web3j, contractAddress));
+//		System.out.println(getTokenSymbol(web3j, contractAddress));
+//		System.out.println(getTokenTotalSupply(web3j, contractAddress));
+//		System.out.println(sendTokenTransaction(
+//				fromAddress, "yzw",
+//				"0x6c0f49aF552F2326DD851b68832730CB7b6C0DaF", contractAddress,
+//				BigInteger.valueOf(100000)));
 	}
 
 	/**

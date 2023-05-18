@@ -19,7 +19,7 @@ public class AccountManager {
 
 	public static void main(String[] args) {
 		admin = Admin.build(new HttpService(Environment.RPC_URL));
-		createNewAccount();
+//		createNewAccount();
 		getAccountList();
 		unlockAccount();
 
